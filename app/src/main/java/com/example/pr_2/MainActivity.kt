@@ -3,7 +3,6 @@ package com.example.pr_2
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.CountDownTimer
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -20,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        email = findViewById(R.id.email)
+        email = findViewById(R.id.textPersonName)
         btn = findViewById(R.id.button)
 
         email.addTextChangedListener {
@@ -45,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         }
         fun login(view: View) {
             if (emailValid(email.text.toString())) {
-                val intent = Intent(this, MainPageActivity::class.java)
+                val intent = Intent(this, LoginActivity::class.java)
                 startActivity(intent)
                 finish()
             }

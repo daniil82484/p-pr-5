@@ -4,13 +4,13 @@
         <layer-list>
             <item>
                 <shape android:shape="rectangle">
-                    <stroke android:color="@color/white" android:width="1dp"/>
+                    <stroke android:color="@color/input_rud" android:width="1dp"/>
                     <padding android:right="14dp" android:left="14dp"/>
                     <corners android:radius="10dp"/>
                     <solid android:color="@color/input_bg"/>
                 </shape>
             </item>
-            <item android:drawable="@drawable/arrow" android:gravity="end|center" android:width="36dp" android:height="48dp"/>
+            <item android:drawable="@drawable/arrow" android:gravity="end|center" android:width="20dp" android:height="20dp"/>
         </layer-list>
     </item>
 </selector>
