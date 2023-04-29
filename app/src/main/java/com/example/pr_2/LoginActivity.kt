@@ -21,7 +21,7 @@ class LoginActivity : AppCompatActivity() {
         // инициализация
         email = findViewById(R.id.email)
         password = findViewById(R.id.password)
-        btn = findViewById(R.id.btn)
+        btn = findViewById(R.id.btn2)
         // вызываться при изменении текста в EditText
         email.addTextChangedListener {
             editContent()

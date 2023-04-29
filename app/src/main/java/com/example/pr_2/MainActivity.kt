@@ -4,28 +4,53 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.view.View
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
+import androidx.core.widget.addTextChangedListener
+import java.util.regex.Pattern
 
 class MainActivity : AppCompatActivity() {
+    lateinit var email: EditText
+    lateinit var btn: Button
+
+    val pattern = ("[a-zA-Z0-9]{1,100}"+"@"+"[a-z]{1,10}"+"\\."+"[a-z]{1,4}")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // продолжительность 2 секунды и интервал тактов 1 секунда
-        val timer = object : CountDownTimer(2000,1000){
+        email = findViewById(R.id.email)
+        btn = findViewById(R.id.button)
 
-            // метод, который вызывается каждый раз, когда тикает таймер
-            override fun  onTick(millisUntilFinished: Long){}
-
-            // метод, который вызывается, когда таймер заканчивает обратный отсчет
-            override fun onFinish(){
-
-                // переход на следующий экран
-                val intent = Intent(this@MainActivity,LoginActivity::class.java)
+        email.addTextChangedListener {
+            editContent()
+        }
+    }
+        private fun editContent(){
+            if (email.text.toString().isNotEmpty())
+            {
+                btn.setBackgroundResource(R.drawable.btn)
+                btn.isClickable = true
+            }
+            else
+            {
+                btn.setBackgroundResource(R.drawable.btn2)
+                btn.isClickable = false
+            }
+        }
+        fun emailValid(text: String):Boolean
+        {
+            return Pattern.compile(pattern).matcher(text).matches()
+        }
+        fun login(view: View) {
+            if (emailValid(email.text.toString())) {
+                val intent = Intent(this, MainPageActivity::class.java)
                 startActivity(intent)
                 finish()
             }
+            else {
+                Toast.makeText(this, "Поле e-mail некорректно заполнено", Toast.LENGTH_SHORT).show()
+            }
         }
-        // запускает таймер обратного отсчета
-        timer.start()
-    }
 }
