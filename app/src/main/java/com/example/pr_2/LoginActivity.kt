@@ -44,6 +44,30 @@ class LoginActivity : AppCompatActivity() {
             btn.setBackgroundResource(R.drawable.btn2)
             btn.isClickable = false
         }
+        if (name.text.toString().isNotEmpty()) {
+            name.setBackgroundResource(R.drawable.input_act)
+        }
+        else{
+            name.setBackgroundResource(R.drawable.input)
+        }
+        if (name2.text.toString().isNotEmpty()) {
+            name2.setBackgroundResource(R.drawable.input_act)
+        }
+        else{
+            name2.setBackgroundResource(R.drawable.input)
+        }
+        if (name3.text.toString().isNotEmpty()) {
+            name3.setBackgroundResource(R.drawable.input_act)
+        }
+        else{
+            name3.setBackgroundResource(R.drawable.input)
+        }
+        if (name4.text.toString().isNotEmpty()) {
+            name4.setBackgroundResource(R.drawable.input_act)
+        }
+        else{
+            name4.setBackgroundResource(R.drawable.input)
+        }
     }
     fun login(view: View) {
         val intent = Intent(this, MainPageActivity::class.java)

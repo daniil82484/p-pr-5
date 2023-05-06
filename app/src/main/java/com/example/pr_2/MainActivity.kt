@@ -37,6 +37,12 @@ class MainActivity : AppCompatActivity() {
                 btn.setBackgroundResource(R.drawable.btn2)
                 btn.isClickable = false
             }
+            if (email.text.toString().isNotEmpty()) {
+                email.setBackgroundResource(R.drawable.input_act)
+            }
+            else{
+                email.setBackgroundResource(R.drawable.input)
+            }
         }
         fun emailValid(text: String):Boolean
         {
