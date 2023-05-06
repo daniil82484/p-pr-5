@@ -19,7 +19,7 @@
     </style>
     
     <style name="Spinner" parent="Theme.Pr2">
-        <item name="android:textColor">@color/black</item>
+        <!--<item name="android:textColor">@color/black</item>-->
         <item name="android:textSize">15sp</item>
         <item name="android:labelTextSize">15sp</item>
         <item name="spinnerStyle">@drawable/input</item>
